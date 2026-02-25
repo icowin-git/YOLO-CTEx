@@ -1,0 +1,36 @@
+# Example usage: python train.py --data emphysema.yaml
+# parent
+# ├── demo/
+# └── data/
+#     └── exp1/
+#         ├── train/
+#         │   ├── images/
+#         │   │   └── ID.png
+#         │   └── labels/
+#         │       └── ID.txt
+#         ├── val/
+#         │   ├── images/
+#         │   │   └── ID.png
+#         │   └── labels/
+#         │       └── ID.txt
+#         └── test/
+#             ├── images/
+#             │   └── ID.png
+#             └── labels/
+#                 └── ID.txt
+task: detection
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /data/home/sgri_zhangqiang/projects/Emphysema.Detection/data/exp1_test # dataset root dir
+train: train # train images (relative to 'path') 128 images
+val: val # val images (relative to 'path') 128 images
+test: test # test images (optional)
+
+# Classes
+names:
+  0: emphysema
+  1: normal
+  
+
+# Download example script/URL (optional)
+download: https://github.com/ultralytics/assets/releases/download/v0.0.0/coco128.zip
